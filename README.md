@@ -152,6 +152,12 @@ Purpose:
 | meeting:read:admin  | Read meetings           |
 | user:read:admin     | Access user information |
 
+#### Please verify that the scope below has been checked. 
+
+[Open](https://marketplace.zoom.us/develop/apps/wnufEQL6Te-_Re8vZb7G_A/scope)
+
+- ✅ meeting:write:registrant:master
+- ✅ webinar:write:registrant:master
 ---
 
 # 7. Activate App
