@@ -4,7 +4,7 @@
 [![Youtube][youtube-shield]][youtube-url]
 [![Facebook][facebook-shield]][facebook-url]
 [![Instagram][instagram-shield]][instagram-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] 
 
 Thanks for visiting my GitHub account!
 
@@ -33,7 +33,7 @@ This guide includes:
 
 # 1. Create Zoom Account
 
-Open: [Zoom Official Website](https://zoom.us/?utm_source=chatgpt.com)
+Open: [Zoom Official Website](https://zoom.us/)
 
 Steps:
 1. Click `Sign Up`
@@ -47,9 +47,9 @@ After login, you will enter Zoom dashboard.
 
 # 2. Open Zoom Developer Portal
 
-Open: [Zoom Developer Portal](https://developers.zoom.us/?utm_source=chatgpt.com)
+Open: [Zoom Developer Portal](https://developers.zoom.us/)
 
-Or directly: [Zoom Marketplace Build App](https://marketplace.zoom.us/develop/create?utm_source=chatgpt.com)
+Or directly: [Zoom Marketplace Build App](https://marketplace.zoom.us/develop/create)
 
 ---
 
@@ -357,7 +357,7 @@ class CreateZoomMeetingRequest extends FormRequest
 
 ---
 
-# 14. Create Zoom Service
+# 14.1. Create Zoom Service
 
 Create file:
 
@@ -454,8 +454,85 @@ class ZoomService
 }
 
 ```
-
 ---
+
+# 14.2 Additional Setting
+
+| Setting                             | Description                                              |
+| ----------------------------------- | -------------------------------------------------------- |
+| `host_video`                        | Host camera auto ON when meeting starts                  |
+| `participant_video`                 | Participant camera auto ON when joining                  |
+| `join_before_host`                  | Allow participants to join before host                   |
+| `waiting_room`                      | Keep users in waiting room until host admits             |
+| `mute_upon_entry`                   | Automatically mute participants on join                  |
+| `auto_recording`                    | Automatically record the meeting                         |
+| `approval_type`                     | Controls registration approval system                    |
+| `audio`                             | Defines meeting audio type (`voip`, `telephony`, `both`) |
+| `enforce_login`                     | Require Zoom login before joining                        |
+| `allow_multiple_devices`            | Allow same user from multiple devices                    |
+| `meeting_authentication`            | Require authenticated Zoom users only                    |
+| `watermark`                         | Add watermark on participant screens                     |
+| `breakout_room`                     | Enable breakout rooms                                    |
+| `focus_mode`                        | Limit participant visibility during meeting              |
+| `show_share_button`                 | Allow participants to share meeting invite               |
+| `registrants_email_notification`    | Send registration emails automatically                   |
+| `waiting_room_options`              | Configure waiting room behavior                          |
+| `continuous_meeting_chat`           | Enable persistent meeting chat                           |
+| `device_testing`                    | Allow device/audio testing before join                   |
+| `private_meeting`                   | Mark meeting as private                                  |
+| `email_notification`                | Enable Zoom email notifications                          |
+| `auto_start_meeting_summary`        | Automatically generate AI meeting summary                |
+| `auto_start_ai_companion_questions` | Enable AI companion during meeting                       |
+
+### Uses
+
+```php
+'settings' => [
+
+            // Host camera ON/OFF
+            'host_video' => true,
+
+            // Participant camera ON/OFF
+            'participant_video' => true,
+
+            // Allow participant before host joins
+            'join_before_host' => false,
+
+            // Auto mute participants on join
+            'mute_upon_entry' => true,
+
+            // Waiting room enable/disable
+            'waiting_room' => true,
+
+            // Auto recording
+            // options: none | local | cloud
+            'auto_recording' => 'none',
+
+            // Meeting audio type
+            // options: both | telephony | voip
+            'audio' => 'voip',
+
+            // Require Zoom login before joining
+            'enforce_login' => false,
+
+            // Allow multiple device join
+            'allow_multiple_devices' => false,
+
+            // Watermark enable
+            'watermark' => false,
+
+            // Registration approval type   0 = auto approve   1 = manual approve      2 = no registration required
+            'approval_type' => 2,
+
+            // Enable focus mode
+            'focus_mode' => false,
+
+            // Enable meeting chat
+            'continuous_meeting_chat' => ['enable' => true,],
+            // Enable breakout room
+            'breakout_room' => [ 'enable' => false,],
+        ],
+```
 
 # 15. Create Controller
 
@@ -643,9 +720,9 @@ You can later implement:
 
 # 21. Useful Official Documentation
 
-* [Zoom API Documentation](https://developers.zoom.us/docs/api/?utm_source=chatgpt.com)
-* [Zoom Server-to-Server OAuth Guide](https://developers.zoom.us/docs/internal-apps/s2s-oauth/?utm_source=chatgpt.com)
-* [Zoom Marketplace](https://marketplace.zoom.us/?utm_source=chatgpt.com)
+* [Zoom API Documentation](https://developers.zoom.us/docs/api/)
+* [Zoom Server-to-Server OAuth Guide](https://developers.zoom.us/docs/internal-apps/s2s-oauth/)
+* [Zoom Marketplace](https://marketplace.zoom.us/)
 
 
 ## Author
