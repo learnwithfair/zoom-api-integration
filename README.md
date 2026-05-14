@@ -495,48 +495,21 @@ class ZoomService
 ```php
 'settings' => [
 
-            // Host camera ON/OFF
-            'host_video' => true,
+            'host_video' => true,             // Host camera ON/OFF
+            'participant_video' => true,      // Participant camera ON/OFF
+            'join_before_host' => false,      // Allow participant before host joins
+            'mute_upon_entry' => true,        // Auto mute participants on join
+            'waiting_room' => true,           // Waiting room enable/disable
+            'auto_recording' => 'none',       // Auto recording    options: none | local | cloud
+            'audio' => 'voip',                // Meeting audio type options: both | telephony | voip
+            'enforce_login' => false,         // Require Zoom login before joining
+            'allow_multiple_devices' => false,// Allow multiple device join
+            'watermark' => false,             // Watermark enable           
+            'approval_type' => 2,             // Registration approval type   0 = auto approve   1 = manual approve      2 = no registration required
+            'focus_mode' => false,            // Enable focus mode
 
-            // Participant camera ON/OFF
-            'participant_video' => true,
-
-            // Allow participant before host joins
-            'join_before_host' => false,
-
-            // Auto mute participants on join
-            'mute_upon_entry' => true,
-
-            // Waiting room enable/disable
-            'waiting_room' => true,
-
-            // Auto recording
-            // options: none | local | cloud
-            'auto_recording' => 'none',
-
-            // Meeting audio type
-            // options: both | telephony | voip
-            'audio' => 'voip',
-
-            // Require Zoom login before joining
-            'enforce_login' => false,
-
-            // Allow multiple device join
-            'allow_multiple_devices' => false,
-
-            // Watermark enable
-            'watermark' => false,
-
-            // Registration approval type   0 = auto approve   1 = manual approve      2 = no registration required
-            'approval_type' => 2,
-
-            // Enable focus mode
-            'focus_mode' => false,
-
-            // Enable meeting chat
-            'continuous_meeting_chat' => ['enable' => true,],
-            // Enable breakout room
-            'breakout_room' => [ 'enable' => false,],
+            'continuous_meeting_chat' => ['enable' => true,],            // Enable meeting chat
+            'breakout_room' => [ 'enable' => false,],                    // Enable breakout room
         ],
 ```
 
